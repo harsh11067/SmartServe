@@ -1,0 +1,439 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #f6f1e8;
+  --ink: #18221b;
+  --muted: #5d675f;
+  --panel: rgba(255, 252, 247, 0.8);
+  --panel-strong: #fffaf2;
+  --line: rgba(24, 34, 27, 0.12);
+  --accent: #d95d39;
+  --accent-dark: #9d3418;
+  --green: #2f7d57;
+  --amber: #b9770e;
+  --red: #b33a3a;
+  --shadow: 0 24px 60px rgba(24, 34, 27, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "Manrope", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(217, 93, 57, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(47, 125, 87, 0.12), transparent 24%),
+    linear-gradient(180deg, #fff8ef 0%, var(--bg) 54%, #efe6d8 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 250, 242, 0.72);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: grid;
+  gap: 2px;
+}
+
+.brand strong,
+h1,
+h2,
+h3,
+.hero-title,
+.metric-value {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.brand strong {
+  font-size: 1.15rem;
+}
+
+.brand span,
+.eyebrow,
+.meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.nav-links,
+.actions,
+.role-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip,
+.ghost-btn,
+.role-link {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.chip.active,
+.role-link.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.primary-btn {
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(157, 52, 24, 0.2);
+}
+
+.secondary-btn {
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.hero-card,
+.panel,
+.metric,
+.table,
+.order-card,
+.menu-card,
+.role-card,
+.timeline,
+.summary-card {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+}
+
+.hero-card,
+.panel {
+  padding: 28px;
+}
+
+.hero-title {
+  margin: 8px 0 12px;
+  font-size: clamp(2.4rem, 4vw, 4.6rem);
+  line-height: 0.95;
+}
+
+.hero-copy {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-grid,
+.grid,
+.role-grid,
+.metrics-grid,
+.menu-grid,
+.order-grid,
+.summary-grid,
+.tables-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.role-grid,
+.metrics-grid,
+.summary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.menu-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.order-grid {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.tables-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metric,
+.summary-card {
+  padding: 20px;
+}
+
+.metric-value {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.accent-text {
+  color: var(--accent-dark);
+}
+
+.green-text {
+  color: var(--green);
+}
+
+.amber-text {
+  color: var(--amber);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.status-pending {
+  background: rgba(185, 119, 14, 0.14);
+  color: var(--amber);
+}
+
+.status-preparing {
+  background: rgba(217, 93, 57, 0.14);
+  color: var(--accent-dark);
+}
+
+.status-ready,
+.status-available {
+  background: rgba(47, 125, 87, 0.14);
+  color: var(--green);
+}
+
+.status-occupied,
+.status-maintenance,
+.status-unavailable {
+  background: rgba(179, 58, 58, 0.12);
+  color: var(--red);
+}
+
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.menu-card,
+.order-card {
+  padding: 18px;
+}
+
+.menu-card h3,
+.order-card h3,
+.panel h2 {
+  margin: 0 0 8px;
+}
+
+.menu-card p,
+.order-card p,
+.panel p,
+.role-card p,
+.summary-card p,
+li {
+  color: var(--muted);
+}
+
+.card-footer,
+.row,
+.table-row,
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.qty-pill,
+.price-pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(24, 34, 27, 0.08);
+  font-weight: 700;
+}
+
+.list {
+  display: grid;
+  gap: 14px;
+}
+
+.list-item {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.table {
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+td:last-child,
+th:last-child {
+  text-align: right;
+}
+
+.table-empty {
+  padding: 22px;
+  color: var(--muted);
+}
+
+.role-card {
+  padding: 22px;
+}
+
+.role-card ul {
+  padding-left: 18px;
+}
+
+.cta-row,
+.footer-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.notice {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(47, 125, 87, 0.08);
+  border: 1px solid rgba(47, 125, 87, 0.2);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fffef9;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.footer-note {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.section-title {
+  margin: 0 0 4px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .order-grid,
+  .split,
+  .role-grid,
+  .metrics-grid,
+  .summary-grid,
+  .tables-grid,
+  .menu-grid,
+  .hero-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar,
+  .toolbar,
+  .row,
+  .table-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
